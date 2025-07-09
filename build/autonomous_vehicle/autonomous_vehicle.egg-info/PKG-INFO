@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: autonomous_vehicle
+Version: 0.0.1
+Summary: Autonomous vehicle stack for class assignment
+Maintainer: your_name
+Maintainer-email: metasebiya8@gmail.com
+License: Apache-2.0
+Requires-Dist: setuptools

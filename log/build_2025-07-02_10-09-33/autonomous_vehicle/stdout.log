@@ -1,0 +1,29 @@
+running develop
+running egg_info
+creating autonomous_vehicle.egg-info
+writing autonomous_vehicle.egg-info/PKG-INFO
+writing dependency_links to autonomous_vehicle.egg-info/dependency_links.txt
+writing entry points to autonomous_vehicle.egg-info/entry_points.txt
+writing requirements to autonomous_vehicle.egg-info/requires.txt
+writing top-level names to autonomous_vehicle.egg-info/top_level.txt
+writing manifest file 'autonomous_vehicle.egg-info/SOURCES.txt'
+reading manifest file 'autonomous_vehicle.egg-info/SOURCES.txt'
+writing manifest file 'autonomous_vehicle.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/metasebiya/autonomous_vehicle_ws/install/autonomous_vehicle/lib/python3.10/site-packages/autonomous-vehicle.egg-link (link to .)
+Installing path_planning script to /home/metasebiya/autonomous_vehicle_ws/install/autonomous_vehicle/lib/autonomous_vehicle
+Installing rcnn_localization script to /home/metasebiya/autonomous_vehicle_ws/install/autonomous_vehicle/lib/autonomous_vehicle
+Installing sensor_fusion script to /home/metasebiya/autonomous_vehicle_ws/install/autonomous_vehicle/lib/autonomous_vehicle
+Installing simple_control script to /home/metasebiya/autonomous_vehicle_ws/install/autonomous_vehicle/lib/autonomous_vehicle
+
+Installed /home/metasebiya/autonomous_vehicle_ws/build/autonomous_vehicle
+running symlink_data
+creating /home/metasebiya/autonomous_vehicle_ws/install/autonomous_vehicle/share/ament_index
+creating /home/metasebiya/autonomous_vehicle_ws/install/autonomous_vehicle/share/ament_index/resource_index
+creating /home/metasebiya/autonomous_vehicle_ws/install/autonomous_vehicle/share/ament_index/resource_index/packages
+symbolically linking /home/metasebiya/autonomous_vehicle_ws/build/autonomous_vehicle/resource/autonomous_vehicle -> /home/metasebiya/autonomous_vehicle_ws/install/autonomous_vehicle/share/ament_index/resource_index/packages
+symbolically linking /home/metasebiya/autonomous_vehicle_ws/build/autonomous_vehicle/package.xml -> /home/metasebiya/autonomous_vehicle_ws/install/autonomous_vehicle/share/autonomous_vehicle
+creating /home/metasebiya/autonomous_vehicle_ws/install/autonomous_vehicle/share/autonomous_vehicle/launch
+symbolically linking /home/metasebiya/autonomous_vehicle_ws/build/autonomous_vehicle/launch/autonomous_vehicle_launch.py -> /home/metasebiya/autonomous_vehicle_ws/install/autonomous_vehicle/share/autonomous_vehicle/launch
+creating /home/metasebiya/autonomous_vehicle_ws/install/autonomous_vehicle/share/autonomous_vehicle/worlds
+symbolically linking /home/metasebiya/autonomous_vehicle_ws/build/autonomous_vehicle/worlds/simple_world.sdf -> /home/metasebiya/autonomous_vehicle_ws/install/autonomous_vehicle/share/autonomous_vehicle/worlds

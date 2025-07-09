@@ -1,0 +1,5 @@
+[console_scripts]
+path_planning = autonomous_vehicle.path_planning:main
+rcnn_localization = autonomous_vehicle.rcnn_localization:main
+sensor_fusion = autonomous_vehicle.sensor_fusion:main
+simple_control = autonomous_vehicle.simple_control:main
