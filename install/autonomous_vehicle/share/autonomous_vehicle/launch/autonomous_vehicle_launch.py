@@ -1,1 +1,0 @@
-/home/metasebiya/autonomous_vehicle_ws/build/autonomous_vehicle/launch/autonomous_vehicle_launch.py
