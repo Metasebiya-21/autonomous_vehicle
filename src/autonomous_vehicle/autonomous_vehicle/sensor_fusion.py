@@ -19,7 +19,7 @@ class SensorFusionNode(Node):
         self.covariance = np.eye(5) * 0.1
         self.last_time = self.get_clock().now()
         self.has_pose = False
-        self.timer = self.create_timer(1.0, self.timer_callback)
+        self.timer = self.create_timer(0.1, self.timer_callback)  # Increase frequency to 10 Hz
         self.get_logger().info('Sensor fusion node initialized')
 
     def pose_callback(self, msg):
@@ -35,18 +35,17 @@ class SensorFusionNode(Node):
     def imu_callback(self, msg):
         try:
             current_time = self.get_clock().now()
-            dt = (current_time - self.last_time).nanoseconds / 1e9
+            dt = max((current_time - self.last_time).nanoseconds / 1e9, 0.001)  # Minimum dt to avoid division issues
             self.last_time = current_time
             self.state[2] += msg.angular_velocity.z * dt  # Update theta
             self.state[3] += msg.linear_acceleration.x * dt  # Update vx
             self.state[4] += msg.linear_acceleration.y * dt  # Update vy
-            self.get_logger().info(f'IMU update received: theta={self.state[2]}, vx={self.state[3]}, vy={self.state[4]}')
+            self.get_logger().info(f'IMU update received: angular_z={msg.angular_velocity.z}, accel_x={msg.linear_acceleration.x}, dt={dt}, theta={self.state[2]}, vx={self.state[3]}, vy={self.state[4]}')
         except Exception as e:
             self.get_logger().error(f'IMU callback error: {str(e)}')
 
     def gps_callback(self, msg):
         try:
-            # Check if latitude and longitude are reasonable
             if -90 <= msg.latitude <= 90 and -180 <= msg.longitude <= 180:
                 self.state[0] = msg.latitude * 111000  # Approx meters per degree latitude
                 self.state[1] = msg.longitude * 111000 * np.cos(np.radians(msg.latitude))  # Adjust for longitude
@@ -73,7 +72,7 @@ class SensorFusionNode(Node):
             odom.twist.twist.linear.x = self.state[3]
             odom.twist.twist.linear.y = self.state[4]
             self.odom_pub.publish(odom)
-            self.get_logger().info(f'Published odometry: ({odom.pose.pose.position.x}, {odom.pose.pose.position.y})')
+            self.get_logger().info(f'Published odometry: ({odom.pose.pose.position.x}, {odom.pose.pose.position.y}), theta={self.state[2]}, vx={self.state[3]}, vy={self.state[4]}')
         except Exception as e:
             self.get_logger().error(f'Publish odometry error: {str(e)}')
 
