@@ -89,6 +89,8 @@ sudo apt install -y ignition-fortress
   source /opt/ros/humble/setup.bash
   source ~/autonomous_vehicle_ws/install/setup.bash
   ros2 run ros_gz_bridge parameter_bridge /camera/image_raw@sensor_msgs/msg/Image@ignition.msgs.Image /imu/data@sensor_msgs/msg/Imu@ignition.msgs.IMU /gps/fix@sensor_msgs/msg/NavSatFix@ignition.msgs.NavSat
+  or 
+  ros2 run ros_gz_bridge parameter_bridge --ros-args -p config_file:=/home/metasebiya/autonomous_vehicle_ws/src/autonomous_vehicle/config/bridge.yaml
   ```
 - This links the car’s camera, IMU, and GPS data so your program can use it.
 
