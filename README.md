@@ -94,7 +94,11 @@ sudo apt install -y ignition-fortress
 
 ### Run the Car’s Brain
 Open new terminals and run these one by one:
+1. **Run Sensor Fusion**
+  - ros2 run autonomous_vehicle sensor_fusion --ros-args --log-level debug
 
+1. **Run Path Planner**
+ros2 run autonomous_vehicle path_planning --ros-args --log-level debug
 1. **Track the Car’s Position**:
    - Type:
      ```bash
